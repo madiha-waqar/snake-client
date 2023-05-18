@@ -1,28 +1,37 @@
 let connection;
+const hello = "Hi!";
+const bye = "Bye byeee!";
 
 const handleUserInput = (key) => {
   if (key === 'W' || key === 'w') {
-    console.log("Moving up ^ ");
+    connection.write("Say: UP ^ ");
     connection.write("Move: up");
   };
 
   if (key === 'A' || key === 'a') {
-    console.log("Moving left < ");
+    connection.write("Say: LEFT < ");
     connection.write("Move: left");
   };
 
   if (key === 'S' || key === 's') {
-    console.log("Moving down ");
+    connection.write("Say: DOWN ");
     connection.write("Move: down");
   };
 
   if (key === 'D' || key === 'd') {
-    console.log("Moving right > ");
+    connection.write("Say: RIGHT > ");
     connection.write("Move: right");
   };
 
+  if (key === "H" || key === 'h') {
+    connection.write("Say: hello");
+  };
+  if (key === "B" || key === 'b') {
+    connection.write("Say: bye");
+  };
+
   if (key === '\u0003') {  // CTRL + C
-    console.log("Existing Now!");
+    console.log("Existing Now!\n");
     process.exit();
   };
 }
