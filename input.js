@@ -1,40 +1,50 @@
+const { 
+  MOVE_UP_KEY,
+  MOVE_DOWN_KEY,
+  MOVE_LEFT_KEY,
+  MOVE_RIGHT_KEY } =
+  require("./constants");
+
 let connection;
-const hello = "Hi!";
-const bye = "Bye byeee!";
+const HELLO = "Say: Hi!";
+const BYE = "Say: Bye byeee!";
+
 
 const handleUserInput = (key) => {
-  if (key === 'W' || key === 'w') {
-    connection.write("Say: UP ^ ");
-    connection.write("Move: up");
+
+  if (key === 'H' || key === 'h') {
+    connection.write(HELLO);
   };
 
-  if (key === 'A' || key === 'a') {
-    connection.write("Say: LEFT < ");
-    connection.write("Move: left");
+  if (key === 'B' || key === 'b') {
+    connection.write(BYE);
+  };
+  
+  if (key === 'W' || key === 'w') {
+    connection.write("Say: UP ^ ");
+    connection.write(MOVE_UP_KEY);
   };
 
   if (key === 'S' || key === 's') {
     connection.write("Say: DOWN ");
-    connection.write("Move: down");
+    connection.write(MOVE_DOWN_KEY);
+  };
+
+  if (key === 'A' || key === 'a') {
+    connection.write("Say: LEFT < ");
+    connection.write(MOVE_LEFT_KEY);
   };
 
   if (key === 'D' || key === 'd') {
     connection.write("Say: RIGHT > ");
-    connection.write("Move: right");
-  };
-
-  if (key === "H" || key === 'h') {
-    connection.write("Say: hello");
-  };
-  if (key === "B" || key === 'b') {
-    connection.write("Say: bye");
+    connection.write(MOVE_RIGHT_KEY);
   };
 
   if (key === '\u0003') {  // CTRL + C
     console.log("Existing Now!\n");
     process.exit();
   };
-}
+};
 
 const setupInput = (conn) => {
   connection = conn;
