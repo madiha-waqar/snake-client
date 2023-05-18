@@ -1,24 +1,22 @@
-const net = require("net");
-const { setupInput } = require('./input.js');
+const net = require("net"); // Importing Node.js net module to create both servers and clients
+const {
+  IP,
+  PORT,
+  PLAYER
+} = require("./constants"); // Importing constants required in client.js file
 
 const connect = () => {
-  const conn = net.createConnection({
-    host: "172.18.74.140 ",
-    port: 50541
+  const conn = net.createConnection({ //initiating an outbound TCP connection to provided host and its port of game server
+    host: IP,
+    port: PORT
   });
 
-  conn.on("connect", (connect) => {
+  conn.setEncoding("utf8"); // interpret incoming data as text
+
+  conn.on("connect", (connect) => { // event 'connect' when a successful connection is made
     console.log("Game On!! You Are Successfully Connected To The Game Server");
-    conn.write("Name: ABC");
+    conn.write(PLAYER);
   });
-
-  conn.on("connect", (connect) => {
-    setTimeout(() => {
-      conn.write( "Move: up");
-      }, 2000);
-    });
-
-  conn.setEncoding("utf8")
 
   conn.on("data", (data) => {
     console.log("you ded cuz you idled");
@@ -27,4 +25,6 @@ const connect = () => {
   return conn;
 }
 
-module.exports = { connect };
+module.exports = {
+  connect
+};
