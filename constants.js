@@ -2,7 +2,7 @@ const IP = 'localhost';
 const PORT = 50541;
 const PLAYER = "Name: MIM"; // Player initials by Name command
 
-const MOVES = {
+const MOVES = {  // Object oriented datastructure of all keyboard commands
   w: 'Move: up',
   a: 'Move: left',
   s: 'Move: down',
