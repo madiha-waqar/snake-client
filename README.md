@@ -8,7 +8,7 @@ Our server code for this game was not written from scratch. It is a heavily modi
 This project is made by [Madiha Waqar](https://www.linkedin.com/in/madiha-waqar-a8253827/?originalSubdomain=ca):raising_hand_woman: as part of [Lighthouse Labs](https://www.lighthouselabs.ca/) Web Development Flex Program curriculum. Knowledge of previously learned concepts (callbacks, asynchronous control flow, modules in node, writing modular code, refactoring code, working with stdin) has been applied in bringing all the functionality into the game.
 
 ### How It Looks
-![snake1.png]()
+![snake1.png](https://github.com/madiha-waqar/snake-client/assets/90156331/3837a75e-7878-4254-8948-e34ed3d9da57)
 
 ## Instructions
 * Setup and run snek-multiplayer server by following steps.
